@@ -15,6 +15,7 @@ This website contains a few different parts: an option for users to translate us
 * HTML
 * CSS
 * JavaScript (embedded in HTML file)
+* SQL
 
 ### What did I use to make this?
 
