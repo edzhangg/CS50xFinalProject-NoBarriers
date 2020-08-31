@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Text Translation
+{% endblock %}
+
+{% block main %}
+<form action="/text" method="post">
+    <select class="custom-select" name="source" id="source">
+        <option value="default">Language to Translate From</option>
+        {% for row in listLanguages %}
+            <option value="{{row}}">{{row}}</option>
+        {% endfor %}
+    </select>
+    <br>
+    <br>
+    <div class="form-group">
+        <textarea autocomplete="off" autofocus class="form-control" name="userInput" placeholder="Enter your text here" type="text" rows="5" cols="140"></textarea>
+    </div>
+    <select class="custom-select" name="destination" id="destination">
+        <option value="default">Language to Translate To</option>
+        {% for row in listLanguages %}
+            <option value="{{row}}">{{row}}</option>
+        {% endfor %}
+    </select>
+    <br>
+    <br>
+    <button class="btn btn-primary" type="submit">Translate!</button>
+</form>
+{% endblock %}

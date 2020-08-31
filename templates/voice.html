@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Voice Translation
+{% endblock %}
+
+{% block main %}
+<form action="/voice" method="post" id="formid">
+    <input type="hidden" name="inputTrue" value="False">
+    <select class="custom-select" name="source" id="source">
+        <option value="default">Language to Translate From</option>
+        {% for row in listLanguages %}
+            <option value="{{row}}">{{row}}</option>
+        {% endfor %}
+    </select>
+    <br>
+    <br>
+    <select class="custom-select" name="destination" id="destination">
+        <option value="default">Language to Translate To</option>
+        {% for row in listLanguages %}
+            <option value="{{row}}">{{row}}</option>
+        {% endfor %}
+    </select>
+    <br>
+    <br>
+    <button class="btn btn-primary" type="submit" name="translate" id="translate">Continue!</button>
+</form>
+{% endblock %}

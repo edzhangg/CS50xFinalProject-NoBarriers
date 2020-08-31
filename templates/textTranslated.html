@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Text Translation Result
+{% endblock %}
+
+{% block main %}
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h4 class="display-4">Here's your Translation:</h4>
+        <hr class="my-4">
+        <p class="lead"><b>{{ source }}:</b></p>
+        <p class="lead">{{ userInput }}</p>
+        <hr class="my-4">
+        <p class="lead"><b>{{ destination }}:</b></p>
+        <p class="lead">{{ translated }}</p>
+    </div>
+</div>
+<form action="/saved" method="post">
+    <input type="hidden" name="source" value="{{ source }}">
+    <input type="hidden" name="userInput" value="{{ userInput }}">
+    <input type="hidden" name="destination" value="{{ destination }}">
+    <input type="hidden" name="translated" value="{{ translated }}">
+    <button class="btn btn-primary" type="submit">Save Translation</button>
+</form>
+{% endblock %}

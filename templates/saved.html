@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Saved Translations
+{% endblock %}
+
+{% block main %}
+    <div class="shadow p-3 mb-5 bg-white rounded">
+        <h1 align = center>Your Saved Translations</h1>
+    </div>
+    <div class="shadow-none p-3 mb-5 bg-light rounded">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Language From</th>
+                    <th scope="col">Source Text</th>
+                    <th scope="col">Language To</th>
+                    <th scope="col">Translated Text</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in saved %}
+                    <tr>
+                        <td>{{ row["src"] }}</td>
+                        <td>{{ row["userInput"] }}</td>
+                        <td>{{ row["dest"] }}</td>
+                        <td>{{ row["translated"] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

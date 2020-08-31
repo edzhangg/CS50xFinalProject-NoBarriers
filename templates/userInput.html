@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Voice Translation
+{% endblock %}
+
+{% block main %}
+<form action="/voice" method="post">
+    <input type="hidden" name="inputTrue" value="True">
+    <input type="hidden" name="srcSymbol" id="srcSymbol" value="{{srcSymbol}}">
+    <input type="hidden" name="source" id="source" value="{{source}}">
+    <input type="hidden" name="destination" id="destination" value="{{destination}}">
+    <div class="form-group">
+        <textarea autofocus class="form-control" name="userInput" id="userInput" placeholder="Press Record and Say Something!" type="text" rows="5" cols="140"></textarea>
+    </div>
+    <div class="form-group">
+        <button type="button" class="btn btn-danger" id="record" name="record" aria-disabled="false" onclick=speak()>Record</button>
+        <button type="button" class="btn btn-danger" id="stop" name="record" aria-disabled="false" onclick=speakStop()>Stop</button>
+    </div>
+    <script>
+        const record = document.querySelector('#record');
+        const stop = document.querySelector('#stop');
+        stop.disabled = true;
+        record.disabled = false;
+        var speechRecognition = new webkitSpeechRecognition();
+        speechRecognition.lang = document.getElementById("srcSymbol").value;
+        function speak() {
+            stop.disabled = false;
+            record.disabled = true;
+            // used the SpeechRecognition interface of Web Speech API (https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition)
+            speechRecognition.onresult = function(e) {
+                document.getElementById('userInput').value = e.results[0][0].transcript;
+            }
+            speechRecognition.start();
+        }
+        function speakStop() {
+            stop.disabled = true;
+            record.disabled = false;
+            speechRecognition.stop();
+        }
+    </script>
+    <br>
+    <button class="btn btn-primary" type="submit">Translate!</button>
+</form>
+<br>
+<form method="get" action="/voice">
+    <button type="submit" class="btn btn-light">Back to Previous Page</button>
+</form>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Homepage
+{% endblock %}
+
+{% block main %}
+<div class="shadow p-3 mb-5 bg-white rounded">
+    <h1 align = center>Welcome to <span style="color: #537fbe">No</span><span style="color: #ea433b"><b>Barriers</b></span></a></h1>
+    <h4>Click on the following buttons to start exploring the new boundaries of language</h4>
+</div>
+<form action="/" method="post">
+    <p><button name="nextPage" type="submit" class="btn btn-light" value="voice">Translate by Voice</button></p>
+    <p><button name="nextPage" type="submit" class="btn btn-light" value="text">Translate by Text</button></p>
+    <p><button name="nextPage" type="submit" class="btn btn-light" value="saved">Your Saved Translations</button></p>
+    <p><button name="nextPage" type="submit" class="btn btn-light" value="history">Your History</button></p>
+</form>
+{% endblock %}

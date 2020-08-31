@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+<div class="shadow p-3 mb-5 bg-white rounded">
+    <h1 align = center>Register to Translate to Different Languages!</h1>
+</div>
+<form action="/register" method="post">
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">@</span>
+        </div>
+        <input class="form-control" name="username" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" type="text">
+    </div>
+    <div class="input-group mb-3">
+        <input class="form-control" name="password" placeholder="Password" type="password">
+    </div>
+    <div class="input-group mb-3">
+        <input class="form-control" name="confirm" placeholder="Confirm Your Password" type="password">
+    </div>
+    <button class="btn btn-primary" type="submit">Register</button>
+</form>
+{% endblock %}
