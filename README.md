@@ -20,3 +20,6 @@ This website contains a few different parts: an option for users to translate us
 ### What did I use to make this?
 
 I used the **Speech Recognition API** (https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition) for JavaScript, as well as the **Flask, SQLite3 and Google Translate** (https://pypi.org/project/googletrans/) Libraries for Python. To put everything together and compile it, I used **Visual Studio Code**.
+
+### Youtube Video:
+https://youtu.be/z6Q9YIrCNaY
