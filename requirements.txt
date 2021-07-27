@@ -75,7 +75,7 @@ Pillow==8.2.0
 pipwin==0.5.0
 prometheus-client==0.10.1
 prompt-toolkit==3.0.18
-PyAudio @ file:///C:/CS50x/Final%20Project/PyAudio-0.2.11-cp38-cp38-win_amd64.whl
+PyAudio @ file:///C:/CS50x/Final%20Project/PyAudio-0.2.11-cp38-cp38-win32.whl
 PyAutoGUI==0.9.52
 pycparser==2.20
 pygame==2.0.1
