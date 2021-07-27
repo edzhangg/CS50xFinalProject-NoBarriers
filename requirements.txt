@@ -85,7 +85,6 @@ qtconsole==5.0.3
 QtPy==1.9.0
 requests==2.24.0
 rfc3986==1.4.0
-Send2Trash==1.5.0
 six==1.14.0
 sniffio==1.1.0
 soupsieve==2.0.1
